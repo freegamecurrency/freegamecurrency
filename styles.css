@@ -1,0 +1,991 @@
+@import url('themes.css');
+
+html, body {
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  height: 100%; /* Ensure full height */
+  margin: 0;
+  padding: 0;
+  background: rgba(53, 73, 119, 1); /* Corrected */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: space-between;
+  grid-gap: 3rem;
+  margin: -8rem 2rem 2rem 2rem;
+  padding: 200px;
+}
+
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: space-between;
+  grid-gap: 3rem;
+  margin: -8rem 2rem 2rem 2rem;
+  padding: 200px;
+}
+
+.container3 { 
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 200px; 
+  justify-content: center; 
+  align-items: center; 
+  height: 40vh; 
+}
+
+
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 200px;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  .container2 {
+    height: 90vh; 
+  }
+}
+
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  .container3 {
+    height: 90vh; 
+  }
+}
+
+
+.container>span {
+  line-height: 40px;
+  width: 200px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+.banner-text {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+.banner-text ul {
+	height: 50px;
+	float: right;
+}
+.banner-text ul li {
+	display: inline-block;
+	padding: 40px 15px;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 20px;
+}
+input[type="file"] {
+  display: none;
+}
+
+.banner-text h2 {
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	margin-top: 20%;
+}
+
+.box-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.box-area li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: #d3cdcd33;
+  animation: animate 5s linear infinite;
+  bottom: -150px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .box-area li {
+    bottom: 500px; 
+  }
+}
+
+.button {
+  background-color : #f708ff;
+  color: white;
+  padding: 20px 20px;
+  border-radius: 4px;
+  border-color: #f708ff;
+  cursor: pointer;
+}
+
+.buttonROM {
+  background-color : #7700ff;
+  color: white;
+  padding: 5px 20px;
+  position: relative;
+  border-radius: 4px;
+  border-color: #f708ff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: outside;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .buttonROM {background-color: #f708ff;}
+
+.ColorPicker1 {
+  background-color : #7700ff;
+  color: white;
+  padding: 50px 50px;
+  border-radius: 4px;
+  border-color: #f708ff;
+  font-size: 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 40%;
+  left: 10px;
+}
+
+
+#mybutton {
+  position: fixed;
+  top: 4px;
+  right: 10px;
+}
+
+.box-area li:nth-child(1) {
+	left: 86%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0.8s;
+}
+.box-area li:nth-child(2) {
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 5s;
+}
+.box-area li:nth-child(3) {
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 1s;
+	animation-duration: 7s;
+}
+.box-area li:nth-child(5) {
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+.box-area li:nth-child(7) {
+	left: 30%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 5.5s;
+}
+.box-area li:nth-child(6) {
+	left: 90%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+.box-area li:nth-child(6) {
+	left: 2%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 1.5s;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+
+body {
+  padding-bottom: 50px;
+  background-image: url(https://freethevbucks.com/wp-content/uploads/faded-vbucks.png), linear-gradient(to right,#354977, #6883a8, #354977);
+}
+
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 100px;   
+}
+h2 {
+  color: white;
+  text-align: left;
+  font-size: 70px;
+}
+
+p {
+  font-family: 'LuckiestGuy';
+  font-family: cursive;
+  color: white;
+  text-align: center;
+  font-size: 70px;
+}
+
+
+
+h1,h2,h3,h4,h5,h6 {
+  color: white;
+  font-family: cursive;
+  font-family: 'LuckiestGuy';
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 10px #000;
+}
+
+
+
+.game-banner {
+  width: 100%;
+  height: auto;
+}
+.logo {
+  height: 150px;
+  border-radius: 15px;
+  position: absolute;
+  left: 12px;
+  top: 0px;
+  user-select: none;
+  padding:40px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.chatlogo {
+  height: 150px;
+  border-radius: 15px;
+  position: absolute;
+  left: 1725px;
+  user-select: none;
+  padding:20px;
+  cursor: pointer;
+}
+
+.bar {
+  position: static;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 49%, rgba(53,73,119,1) 100%);
+  width: 100%; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  gap: 10px;
+  background: var(--background);
+  position: absolute;
+}
+
+
+.game {
+  height: 200px;
+  width: 200px;
+  text-decoration: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  animation: hoverstop 0.5s;
+}
+
+
+.freelogo-wrapper {
+  position: absolute;
+  top: 100px; /* Adjust as needed */
+  left: 70%;
+  animation: pulse 2s infinite; /* Apply pulsing here */
+  
+}
+
+.freelogo {
+  transform: rotate(11deg); /* Apply rotation here */
+  width: 400px; /* Adjust size as needed */
+}
+
+.p1 {
+  top: 10px;
+  font-family: 'LuckiestGuy';
+  font-family: Arial;
+  color: white;
+  text-align: center;
+  font-size: 60px;
+}
+
+.middletext {
+  position: absolute; /* Position the text box absolutely */
+  top: 28%; /* Center it vertically */
+  left: 21%; /* Start from the center horizontally *//* Offset it to be exactly in the center */
+  width: 58%; /* You can adjust the width as needed */
+  height: auto; /* Set height based on content */
+  background: rgba(0, 0, 0, 0.2); /* Optional: background color for the text box */
+  color: white; /* Text color */
+  padding: 20px;
+  text-align: center; /* Center the text inside */
+  border-radius: 10px; /* Optional: rounded corners */
+  box-sizing: border-box;
+  display: block;
+  overflow-y: 0;
+}
+
+.bottomtext {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: none;
+  color: white;
+  padding: 0px; /* Increase the padding to make it thicker */
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: block;
+  overflow-y: 0;
+}
+
+
+.middletext h2 {
+  color: white;
+  font-size: 70px;
+  margin-bottom: 10px; /* Adds space below the h2 before the paragraph */
+}
+
+.middletext p {
+  color: white;
+  font-size: 60px;
+  margin-bottom: 10px; /* Adds space below the paragraph before the next h2 */
+  text-align: left;
+  padding-left: 100px;
+}
+
+
+.vbucks-banner, .robux-banner {
+  position:  absolute; /* Position them absolutely */
+  top: 60%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for exact vertical centering */
+  width: 250px; /* Set a fixed width */
+  height: 60%;
+  background: linear-gradient(90deg, rgb(34, 59, 116) 0%, rgb(49, 101, 175) 50%, rgba(34, 59, 116) 100%);
+  border: 2px solid #fff;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.vbucks-banner {
+  left: 0; /* Align to the left */
+}
+
+.robux-banner {
+  right: 0; /* Align to the right */
+}
+
+.singeBuck {
+  width: 150px;
+  align-self: flex-end; /* Top-right within the banner */
+}
+
+.singlerobux {
+  width: 300px;
+  align-self:  center; /* Top-right within the banner */
+}
+
+.robuxcard {
+  width: 300px;
+  align-self:  center; /* Top-right within the banner */
+}
+
+.text1 {
+  text-align: center;
+  margin: 0;
+}
+
+.pileBuck {
+  width: 400px;
+  align-self: center; /* Center at the bottom of banner */
+}
+
+
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Keep normal size */
+  }
+  50% {
+    transform: scale(1.1); /* Scale up slightly */
+  }
+}
+
+.slidemenu {
+  position: fixed;
+  top: 0;
+  left: -15%; /* Initially hidden to the left */
+  width: 12%; /* Set the width of the sliding menu */
+  height: 100%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid #fff; 
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  transition: left 0.3s ease-in-out; /* Slide in transition */
+}
+
+.slidemenu.open {
+  left: 0; /* Move the menu to the left */
+}
+
+/* Stack buttons inside the sliding menu */
+.slidemenu .text2-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center them horizontally */
+  justify-content: flex-start; /* Align to top */
+  height: 100%; /* Make sure it takes full height to allow space */
+  gap: 250px; /* Adds a gap between buttons */
+}
+
+.text2 {
+  color: white;
+  font-size: 20px; /* Adjust font size for better button readability */
+  text-align: center;
+  background-color: inherit; /* Maintain the background */
+  border: none; /* Remove button border if not needed */
+  padding: 10px 20px; /* Add some padding for better button appearance */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.text1 {
+  color: white;
+  position: sticky;
+  top: 230px;
+  text-align: center;
+  margin: 0;
+  font-size: 50px;
+  background-color: inherit;
+  border-width: 10px;
+}
+
+.game:hover {
+	animation: hoverdown 0.5s;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+}
+
+.slide1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(100%, -50%) rotateY(90deg); 
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* Show the slide1 with animation */
+.slide1.show {
+  display: block;
+  animation: slideInFlip 2s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+
+.chris { 
+  width: 100%;
+  height: 100%;
+}
+
+.drake { 
+  width: 90%;
+  height: 90%;
+}
+
+/* Flip and Slide In Animation */
+@keyframes slideInFlip {
+  0% {
+    transform: translate(100%, -50%) rotateY(90deg);
+    opacity: 0; /* Start hidden */
+  }
+  60% {
+    transform: translate(-50%, -50%) rotateY(20deg);
+    opacity: 1; /* Make it fully visible */
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateY(0deg);
+    opacity: 1; /* Ensure it stays fully visible */
+  }
+}
+@keyframes slideOutFlip {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); /* Start at center */
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg); /* Rotate halfway */
+    opacity: 1;
+  }
+  75% {
+    transform: translate(50%, -50%) rotate(270deg); /* Rotate 270 degrees */
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(100%, -50%) rotate(360deg); /* Full 360° rotation and fling off the screen */
+    opacity: 0; /* Fully hidden */
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+.vbuckscam {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Start off-screen with a rotated flip */
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.vbuckscam h1 {
+  font-size: 80px;
+}
+.vbuckscam.show {
+  display: block;
+  animation: slideInFlip 2s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+
+
+.popup-content {
+  display: flex;
+  justify-content: center; /* Align content to the left */
+  align-items: center; /* Align the content at the top */
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Section for input fields */
+.input-section {
+  display: flex;
+  flex-direction: column; /* Stack input fields vertically */
+  gap: 15px; /* Space between input fields */
+  margin-left: 20px; /* Optional: space from the left edge of the popup */
+  width: 100%; /* Adjust if needed, to ensure it stays inside the box */
+}
+
+/* Label styling */
+.input-section label {
+  font-size: 35px;
+  font-family: 'LuckiestGuy';
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 10px #000;
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* Input field styling */
+.input-section input, select  {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 250px; /* Adjust width as needed */
+  background-color: #fff;
+  color: #333;
+}
+.input-section select {
+  width: 100%; /* Ensure it takes up the same width as the other inputs */
+}
+
+/* Styling for Submit Button */
+#submitBtn {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: not-allowed; /* Initially disabled */
+  opacity: 0.5; /* Reduced opacity when disabled */
+}
+
+#submitBtn:enabled {
+  cursor: pointer; /* Change cursor when enabled */
+  opacity: 1; /* Full opacity when enabled */
+  background-color: #4CAF50; /* Green when enabled */
+  color: white;
+}
+
+.generator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Start off-screen with a rotated flip */
+  width: 50%;
+  height: 60%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.generator h1 {
+  font-size: 80px;
+}
+.generator.show {
+  display: block;
+  animation: slideInFlip 2s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+
+.loading-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Hide anything that goes beyond the container bounds */
+}
+
+/* The actual loading bar */
+#loading-bar {
+  height: 30px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  transition: width 0.1s ease-in-out;
+  position: relative; /* Allow movement of the bar */
+}
+
+/* Text displaying the percentage */
+#percentage-text {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+#random-text {
+  text-align: center;
+  font-size: 30px;
+  font-family: bold;
+  margin-top: 10px;
+  font-family: monospace;
+  color: black;
+}
+
+.choose-robux {
+  width: 360px;
+  position: absolute;
+  right: 0;
+  transform: translate(20%, 30%);
+}
+.choose-vbuck {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  transform: translate(50%, 20%);
+}
+#genImage {
+  transition: filter 1s ease; /* Smooth transition */
+}
+
+/* Green tint on click */
+.green {
+  filter: hue-rotate(300deg);
+}
+
+.finished {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Start off-screen with a rotated flip */
+  width: 50%;
+  height: 40%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+
+/* Styling for the button */
+.cool-button {
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);; /* Green background */
+  color: white; /* White text */
+  font-size: 16px; /* Text size */
+  padding: 15px 32px; /* Padding around text */
+  border: 2px solid white;
+  border-radius: 15px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Center the text */
+  display: inline-block; /* Makes it inline-block for flexibility */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Active state when the button is clicked */
+.cool-button:active {
+  background-color: linear-gradient(90deg, rgb(40, 69, 138) 0%, rgb(63, 101, 153) 50%, rgrgb(44, 71, 134)00%);; /* Even darker green when clicked */
+  transform: translateY(0); /* Return to normal position */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow when clicked */
+}
+
+.what-the-scam-is {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.what-the-scam-is.show {
+  display: block;
+  animation: flyInSpin 0.8s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+@keyframes flyInSpin {
+  0% {
+    transform: translateY(100vh) translateX(-50%) rotate(0deg); /* Start off-screen at the bottom and no rotation */
+  }
+  50% {
+    transform: translateY(-20%) translateX(-50%) rotate(180deg); /* Move upwards and rotate halfway */
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%) rotate(360deg); /* End at the center of the screen with a full rotation */
+  }
+}
+@keyframes flyOutSpin {
+  0% {
+    transform: translateY(-50%) translateX(-50%) rotate(360deg); /* Start at the center with a full rotation */
+  }
+  50% {
+    transform: translateY(-20%) translateX(-50%) rotate(180deg); /* Move upwards and rotate halfway */
+  }
+  100% {
+    transform: translateY(100vh) translateX(-50%) rotate(0deg); /* End off-screen at the bottom */
+  }
+}
+.audience {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.audience.show {
+  display: block;
+  animation: flyInSpin 0.8s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+.persona {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.persona.show {
+  display: block;
+  animation: flyInSpin 0.8s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+.emotional {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.emotional.show {
+  display: block;
+  animation: flyInSpin 0.8s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+.conclusion {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.conclusion.show {
+  display: block;
+  animation: flyInSpin 0.8s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}
+.review {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.review.show {
+  display: block;
+  animation: flyInSpin 0.8s ease forwards;
+  animation-fill-mode: forwards; /* Ensure the final animation state persists */
+}

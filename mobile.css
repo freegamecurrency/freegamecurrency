@@ -1,0 +1,77 @@
+@media (pointer:none), (pointer:coarse) {
+    
+      p {
+        top: 10px;
+        font-family: 'LuckiestGuy';
+        font-family: Arial;
+        color: white;
+        text-align: center;
+        font-size: 60px;
+      }
+    
+      h1 {
+        font-size: 70px;
+      }
+      h1, p {
+        margin-top: 20px; /* Adjust this value as needed */
+      }
+      
+      .freelogo {
+        transform: rotate(11deg); /* Apply rotation here */
+        width: 200px; /* Adjust size as needed */
+        right: 20px;
+      }
+
+      h1,h2,h3,h4,h5,h6 {
+        color: white;
+        font-family: 'LuckiestGuy';
+        font-family: Arial;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        text-shadow: 0 1px 10px #000;
+      }
+    .slidemenu {
+        position: fixed;
+        top: 0;
+        left: -27%; /* Initially hidden to the left */
+        width: 22%; /* Set the width of the sliding menu */
+        height: 100%;
+        background: linear-gradient(90deg, rgba(53,73,119,1) 0%, rgba(104,131,168,1) 50%, rgba(53,73,119,1) 100%);
+        border: 2px solid #fff; 
+        color: white;
+        padding: 20px;
+        transition: left 0.3s ease-in-out; /* Slide in transition */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .vbucks-banner, .robux-banner {
+        position:  absolute; /* Position them absolutely */
+        top: 60%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust for exact vertical centering */
+        width: 200px; /* Set a fixed width */
+        height: 60%;
+        background: linear-gradient(90deg, rgb(34, 59, 116) 0%, rgb(49, 101, 175) 50%, rgba(34, 59, 116) 100%);
+        border: 2px solid #fff;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .choose-robux {
+        width: 250px;
+        position: absolute;
+        right: 0;
+        transform: translate(-10%, 20%);
+      }
+      .choose-vbuck {
+        width: 150px;
+        position: absolute;
+        left: 0;
+        transform: translate(50%, 20%);
+      }
+}

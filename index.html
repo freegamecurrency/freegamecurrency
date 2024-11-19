@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="mobile.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body >
+
+<div class="banner-text">
+	<div class="logo">
+		<img alt="logo" class="logo" src="./images/dropdown.png" draggable="false" onclick="toggleSlideMenu()">
+	</div>
+
+	<div class="freelogo-wrapper">
+		<img alt="freelogo" class="freelogo" src="./images/freelogo.png" draggable="false">
+	</div>
+
+    <div class="bar">
+        <h1>IN GAME CURRENCY</h1>	
+        <p>Free Currency Generator!</p>	
+    </div>
+
+    <div class="slidemenu">
+        <div class="text2-container">
+            <button class="text1" onclick="slide1Open()">Get to know us!</button >
+
+            <button class="text1" onclick="revOpen()">Reviews!</button > 
+        </div>
+    </div>
+</div>
+<div class="fixed">
+    <div class="vbucks-banner" onclick="scamOpen()">
+        <img alt="vbuck" class="singeBuck" src="./images/vbucks.png" draggable="false">
+        <p class="text1">V-Bucks Generator!</p>	
+        <img alt="vbuck" class="pileBuck" src="./images/vbucks-layer.png" draggable="false">
+    </div>
+
+    <div id="popupGui" class="slide1">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="slide1Close()">
+        <img src="./images/chris.png" alt="Close" class="chris">
+
+    </div>
+
+    <div id="scam" class="vbuckscam">
+        <div class="popup-content"> 
+            <img src="./images/close.png" class="close-btn" onclick="scamClose()" alt="Close Button">
+        
+            
+            <div class="input-section">
+                <h1>FREE CURRENCY</h1>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name">
+              
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" placeholder="Enter your username">
+              
+              <label for="password">Password:</label>
+              <input type="text" id="password" name="password" placeholder="Enter your password">
+
+              <button id="submitBtn" onclick="submitForm()" disabled>Submit</button>
+            </div>
+          </div>
+
+    </div>
+
+    <div id="gen" class="generator">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="genClose()">
+        <h1>The Generator</h1>
+        <div class="loading-container">
+            <div id="loading-bar"></div>
+            <div id="percentage-text">0%</div>
+            <div id="random-text"></div> <!-- Random text display -->
+        </div>
+        <img src="./images/vbucks.png" id="genImage" alt="buck" class="choose-vbuck" onclick="startLoading()">
+        <img src="./images/robux.png" id="genImage" alt="buck" class="choose-robux" onclick="startLoading()">
+    </div>
+    <div id="fin" class="finished">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="finClose()">
+        <h1>Congrats!</h1>
+        <p>Code is:</p>
+        <p id="randomcode">NaN...</p>
+
+    </div>
+    
+    <div id="whatis" class="what-the-scam-is">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="whatisClose()">
+        <img src="./images/chris.png" alt="Close" class="chris">
+    </div> 
+    <div id="aud" class="audience">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="audienceClose()">
+        <img src="./images/chris.png" alt="Close" class="chris">
+    </div> 
+    <div id="per" class="persona">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="perClose()">
+        <img src="./images/chris.png" alt="Close" class="chris">
+    </div> 
+    <div id="emo" class="emotional">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="emoClose()">
+        <img src="./images/chris.png" alt="Close" class="chris">
+    </div> 
+    <div id="con" class="conclusion">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="conClose()">
+        <img src="./images/chris.png" alt="Close" class="chris">
+    </div> 
+r
+    <div id="rev" class="review">
+        <img src="./images/close.png" alt="Close" class="close-btn" onclick="revClose()">
+        <img src="./images/chris.png" alt="Close" class="chris">
+    </div> 
+
+    <div class="robux-banner" onclick="scamOpen()">
+        <img alt="vbuck" class="singlerobux" src="./images/robux.png" draggable="false">
+        <p class="text1">Robux Generator!</p>	
+        <img alt="vbuck" class="pileBuck" src="./images/robuxpile.png" draggable="false">
+    </div>
+</div>
+<div class="middletext">
+    <img src="./images/drake.png" alt="Close" class="drake">
+</div>
+
+<div class="bottomtext">
+    <div id="button-container">
+        <button id="whatisbutton" class="cool-button">How the Scam Works?</button>
+        <button id="audbutton" class="cool-button">Audience</button>
+        <button id="perbutton" class="cool-button">Persona</button>
+        <button id="emobutton" class="cool-button">Emotional Appeals</button>
+        <button id="conbutton" class="cool-button">Conclusion</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('whatisbutton').addEventListener('click', function() {
+    whatisOpen()
+    });
+    document.getElementById('audbutton').addEventListener('click', function() {
+    audienceOpen()
+    });
+    document.getElementById('perbutton').addEventListener('click', function() {
+    audienceOpen()
+    });
+    document.getElementById('emobutton').addEventListener('click', function() {
+    emoOpen()
+    });
+    document.getElementById('conbutton').addEventListener('click', function() {
+    conOpen()
+    });
+</script>
+
+<script>
+    // Function to toggle the slide menu
+    function toggleSlideMenu() {
+        var menu = document.querySelector('.slidemenu');
+        menu.classList.toggle('open');
+    }
+
+    function slide1Close() {
+        const gui = document.getElementById("popupGui");
+        gui.classList.remove("show"); 
+        gui.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function slide1Open() {
+        const gui = document.getElementById("popupGui");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+        var menu = document.querySelector('.slidemenu');
+        menu.classList.toggle('open');
+    }
+    
+
+    function scamClose() {
+        const gui = document.getElementById("scam");
+        gui.classList.remove("show"); 
+        gui.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function scamOpen() {
+        const gui = document.getElementById("scam");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+
+
+    function genClose() {
+        const gui = document.getElementById("gen");
+        gui.classList.remove("show"); 
+        gui.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+        const gui2 = document.getElementById("scam");
+        gui2.classList.remove("show"); 
+        gui2.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui2.style.display = "none";
+        gui2.style.animation = ""; 
+        }, 600); 
+    }
+    function genOpen() {
+        const gui = document.getElementById("gen");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+
+    function finClose() {
+        const gui = document.getElementById("fin");
+        gui.classList.remove("show"); 
+        gui.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+        const gui2 = document.getElementById("scam");
+        gui2.classList.remove("show"); 
+        gui2.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui2.style.display = "none";
+        gui2.style.animation = ""; 
+        }, 600); 
+        const gui3 = document.getElementById("gen");
+        gui3.classList.remove("show"); 
+        gui3.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui3.style.display = "none";
+        gui3.style.animation = ""; 
+        }, 600); 
+    }
+    function finOpen() {
+        const gui = document.getElementById("fin");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+
+    function whatisClose() {
+        const gui = document.getElementById("whatis");
+        gui.classList.remove("show"); 
+        gui.style.animation = "flyOutSpin 0.8s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function whatisOpen() {
+        const gui = document.getElementById("whatis");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+    function audienceClose() {
+        const gui = document.getElementById("aud");
+        gui.classList.remove("show"); 
+        gui.style.animation = "flyOutSpin 0.8s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function audienceOpen() {
+        const gui = document.getElementById("aud");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+    function perClose() {
+        const gui = document.getElementById("per");
+        gui.classList.remove("show"); 
+        gui.style.animation = "flyOutSpin 0.8s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function perOpen() {
+        const gui = document.getElementById("per");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+    function emoClose() {
+        const gui = document.getElementById("emo");
+        gui.classList.remove("show"); 
+        gui.style.animation = "flyOutSpin 0.8s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function emoOpen() {
+        const gui = document.getElementById("emo");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+    function conClose() {
+        const gui = document.getElementById("con");
+        gui.classList.remove("show"); 
+        gui.style.animation = "flyOutSpin 0.8s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function conOpen() {
+        const gui = document.getElementById("con");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+    }
+
+    function revClose() {
+        const gui = document.getElementById("rev");
+        gui.classList.remove("show"); 
+        gui.style.animation = "slideOutFlip 0.6s ease forwards";
+        setTimeout(() => {
+        gui.style.display = "none";
+        gui.style.animation = ""; 
+        }, 600); 
+    }
+    function revOpen() {
+        const gui = document.getElementById("rev");
+        gui.style.display = "block"; 
+        gui.classList.remove("show");
+        void gui.offsetWidth; 
+        gui.classList.add("show"); 
+        var menu = document.querySelector('.slidemenu');
+        menu.classList.toggle('open');
+    }
+
+</script>
+<script>
+    function checkInputs() {
+  const name = document.getElementById("name").value;
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const submitBtn = document.getElementById("submitBtn");
+
+  // Check if both inputs are not empty
+  if (name && username && password) {
+    submitBtn.disabled = false; // Enable Submit button
+  } else {
+    submitBtn.disabled = true; // Keep Submit button disabled
+  }
+}
+
+// Add event listeners to check inputs as the user types
+document.getElementById("name").addEventListener("input", checkInputs);
+document.getElementById("username").addEventListener("input", checkInputs);
+document.getElementById("password").addEventListener("input", checkInputs);
+
+// Function to handle form submission
+function submitForm() {
+  const name = document.getElementById("name").value;
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // Perform your form submission logic here
+  if (name && username && password) {
+
+    genOpen()
+
+  }
+}
+document.getElementById("genImage").addEventListener("click", function() {
+  this.classList.toggle("green");
+});
+// Check inputs on page load in case there is prefilled data
+checkInputs();
+</script>
+
+<script>
+function startLoading() {
+  let loadingBar = document.getElementById('loading-bar');
+  let percentageText = document.getElementById('percentage-text');
+  let randomText = document.getElementById('random-text'); // Text element to display random string
+  let percentage = 0;
+  let startTime = Date.now(); // Track the start time to control the 30 seconds duration
+  
+  // Function to generate a random string in the format XXXX-XXXX-XXXX-XXXX
+  function generateRandomString() {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'; // Allowed characters for the random string
+    for (let i = 0; i < 4; i++) {
+      let part = '';
+      for (let j = 0; j < 4; j++) {
+        part += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      result += part + (i < 3 ? '-' : ''); // Add a dash between parts, no dash after the last part
+    }
+    return result;
+  }
+
+  let interval = setInterval(function() {
+    let elapsedTime = Date.now() - startTime; // Calculate how much time has passed
+    
+    // Calculate the percentage based on elapsed time (increasing over 30 seconds)
+    percentage = (elapsedTime / 10000) * 100; // Linear increase from 0% to 100% over 30 seconds
+    
+    // Add random fluctuation for the dynamic effect
+    let fluctuation = (Math.random() - 0.5) * 10; // Random fluctuation (-5 to 5)
+    percentage += fluctuation;
+    
+    // Ensure the percentage stays within the 0-100% range
+    if (percentage > 100) {
+      percentage = 100; // Cap at 100%
+    } else if (percentage < 0) {
+      percentage = 0; // Cap at 0%
+    }
+
+    // Update the width of the loading bar and the percentage text
+    loadingBar.style.width = percentage + '%';
+    percentageText.textContent = Math.round(percentage) + '%';
+    
+    // Update the random string under the loading bar
+    randomText.textContent = generateRandomString();
+
+    // Ensure that after 30 seconds, we finish at 100%
+    if (elapsedTime >= 10000) {
+      percentage = 100;
+      loadingBar.style.width = '100%';
+      percentageText.textContent = '100%';
+      randomText.textContent = generateRandomString();
+      const Code = document.getElementById("randomcode");
+      randomcode.textContent = randomText.textContent;
+      finOpen() // Final random string
+      clearInterval(interval); // Stop the interval once it's done
+    }
+  }, 50); // Update every 50ms
+}
+
+// Call the function to start loading
+
+</script>
+
+</body>
+</html>
